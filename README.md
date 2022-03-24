@@ -1,6 +1,10 @@
-# happy
+# happy - さばえSDGsアプリ「ハピー」（仮称）
 
-A new Flutter project.
+A Flutter project.
+
+![image](https://user-images.githubusercontent.com/1715217/160021012-40df6d54-3b0b-405f-bd47-abd1a4dde6d5.png)
+
+- [事前説明会](https://fukuno.jig.jp/3521)
 
 ## Getting Started
 
