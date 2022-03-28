@@ -296,97 +296,92 @@ class _EnterPriceState extends State<EnterPrice> {
       body: Column(
         children: <Widget>[
           Expanded(
-            child: Container(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        userInput,
-                        style:
-                            const TextStyle(fontSize: 40, color: Colors.black),
-                      ),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      userInput,
+                      style: const TextStyle(fontSize: 40, color: Colors.black),
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      //alignment: Alignment.centerRight,
-                      child: ElevatedButton(
-                        child: const Text('つかう',
-                            style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold)),
-                        onPressed: () => pay(),
-                      ),
-                    )
-                  ]),
-            ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(5),
+                    //alignment: Alignment.centerRight,
+                    child: ElevatedButton(
+                      child: const Text('つかう',
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold)),
+                      onPressed: () => pay(),
+                    ),
+                  )
+                ]),
           ),
           Expanded(
             flex: 3,
-            child: Container(
-              child: GridView.builder(
-                  itemCount: buttons.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3, childAspectRatio: 1.5),
-                  itemBuilder: (BuildContext context, int index) {
-                    // Clear Button
-                    if (index == 9) {
-                      return MyButton(
-                        buttontapped: () {
-                          setState(() {
-                            userInput = '';
-                            answer = '0';
-                          });
-                        },
-                        buttonText: buttons[index],
-                        //color: Colors.blue[50],
-                        color: Colors.white,
-                        textColor: Colors.black,
-                      );
-                    }
+            child: GridView.builder(
+                itemCount: buttons.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3, childAspectRatio: 1.5),
+                itemBuilder: (BuildContext context, int index) {
+                  // Clear Button
+                  if (index == 9) {
+                    return MyButton(
+                      buttontapped: () {
+                        setState(() {
+                          userInput = '';
+                          answer = '0';
+                        });
+                      },
+                      buttonText: buttons[index],
+                      //color: Colors.blue[50],
+                      color: Colors.white,
+                      textColor: Colors.black,
+                    );
+                  }
 
-                    // Delete Button
-                    else if (index == 11) {
-                      return MyButton(
-                        buttontapped: () {
-                          setState(() {
-                            userInput =
-                                userInput.substring(0, userInput.length - 1);
-                          });
-                        },
-                        buttonText: buttons[index],
-                        //color: Colors.blue[50],
-                        color: Colors.white,
-                        textColor: Colors.black,
-                      );
-                    }
+                  // Delete Button
+                  else if (index == 11) {
+                    return MyButton(
+                      buttontapped: () {
+                        setState(() {
+                          userInput =
+                              userInput.substring(0, userInput.length - 1);
+                        });
+                      },
+                      buttonText: buttons[index],
+                      //color: Colors.blue[50],
+                      color: Colors.white,
+                      textColor: Colors.black,
+                    );
+                  }
 
-                    //  other buttons
-                    else {
-                      return MyButton(
-                        buttontapped: () {
-                          setState(() {
-                            userInput += buttons[index];
-                            // ignore: avoid_print
-                            print(userInput);
-                          });
-                        },
-                        buttonText: buttons[index],
-                        color: Colors.orange[50],
-                        textColor: Colors.black,
-                        /*
-                        color: isOperator(buttons[index])
-                            ? Colors.blueAccent
-                            : Colors.white,
-                        textColor: isOperator(buttons[index])
-                            ? Colors.white
-                            : Colors.black,
-                            */
-                      );
-                    }
-                  }), // GridView.builder
-            ),
+                  //  other buttons
+                  else {
+                    return MyButton(
+                      buttontapped: () {
+                        setState(() {
+                          userInput += buttons[index];
+                          // ignore: avoid_print
+                          print(userInput);
+                        });
+                      },
+                      buttonText: buttons[index],
+                      color: Colors.orange[50],
+                      textColor: Colors.black,
+                      /*
+                      color: isOperator(buttons[index])
+                          ? Colors.blueAccent
+                          : Colors.white,
+                      textColor: isOperator(buttons[index])
+                          ? Colors.white
+                          : Colors.black,
+                          */
+                    );
+                  }
+                }),
           ),
         ],
       ),
