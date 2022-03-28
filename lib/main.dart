@@ -52,21 +52,21 @@ class _MyHomePageState extends State {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('ハピー'),
+        title: const Text('ハピー'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('images/logo.png', width: 150),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Image.asset('images/sdgs.png'),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               '25 SDGs POINT',
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
             ),
-            Text(
+            const Text(
               '300 ハピー',
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
             ),
@@ -76,24 +76,26 @@ class _MyHomePageState extends State {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             */
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             ElevatedButton(
-              child: Text('QRコードをスキャンする',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+              child: const Text(
+                'QRコードをスキャンする',
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
               onPressed: () => scanQrCode(),
               //onPressed: () => enterPrice(),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             ElevatedButton(
-              child: Text(
+              child: const Text(
                 'SDGsイベント一覧',
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
               onPressed: () => showEvents(),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             ElevatedButton(
-              child: Text(
+              child: const Text(
                 'ハピー協賛店マップ',
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
@@ -154,14 +156,14 @@ class EventList extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('SDGsイベント一覧'),
+          title: const Text('SDGsイベント一覧'),
         ),
         body: ListView(children: [
-          _menuItem("たのしいゴミ拾い", Icon(Icons.settings)),
-          _menuItem("プログラミングを学ぼう", Icon(Icons.map)),
-          _menuItem("実践、ジェンダー平等", Icon(Icons.room)),
-          _menuItem("ベトナム語はじめのいっぽ", Icon(Icons.local_shipping)),
-          _menuItem("完全食とは？", Icon(Icons.airplanemode_active)),
+          _menuItem("たのしいゴミ拾い", const Icon(Icons.settings)),
+          _menuItem("プログラミングを学ぼう", const Icon(Icons.map)),
+          _menuItem("実践、ジェンダー平等", const Icon(Icons.room)),
+          _menuItem("ベトナム語はじめのいっぽ", const Icon(Icons.local_shipping)),
+          _menuItem("完全食とは？", const Icon(Icons.airplanemode_active)),
         ]),
       ),
     );
@@ -170,19 +172,21 @@ class EventList extends StatelessWidget {
   Widget _menuItem(String title, Icon icon) {
     return GestureDetector(
       child: Container(
-          padding: EdgeInsets.all(8.0),
-          decoration: new BoxDecoration(
-              border: new Border(
-                  bottom: BorderSide(width: 1.0, color: Colors.grey))),
+          padding: const EdgeInsets.all(8.0),
+          decoration: const BoxDecoration(
+            border: Border(
+              bottom: BorderSide(width: 1.0, color: Colors.grey),
+            ),
+          ),
           child: Row(
             children: <Widget>[
               Container(
-                margin: EdgeInsets.all(10.0),
+                margin: const EdgeInsets.all(10.0),
                 child: icon,
               ),
               Text(
                 title,
-                style: TextStyle(color: Colors.black, fontSize: 18.0),
+                style: const TextStyle(color: Colors.black, fontSize: 18.0),
               ),
             ],
           )),
@@ -207,12 +211,12 @@ class ShopList extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('ハピー協賛店マップ'),
+          title: const Text('ハピー協賛店マップ'),
         ),
         body: ListView(children: [
-          _menuItem("おみせA", Icon(Icons.store)),
-          _menuItem("おみせB", Icon(Icons.store)),
-          _menuItem("おみせC", Icon(Icons.store)),
+          _menuItem("おみせA", const Icon(Icons.store)),
+          _menuItem("おみせB", const Icon(Icons.store)),
+          _menuItem("おみせC", const Icon(Icons.store)),
         ]),
       ),
     );
@@ -221,19 +225,21 @@ class ShopList extends StatelessWidget {
   Widget _menuItem(String title, Icon icon) {
     return GestureDetector(
       child: Container(
-          padding: EdgeInsets.all(8.0),
-          decoration: new BoxDecoration(
-              border: new Border(
-                  bottom: BorderSide(width: 1.0, color: Colors.grey))),
+          padding: const EdgeInsets.all(8.0),
+          decoration: const BoxDecoration(
+            border: Border(
+              bottom: BorderSide(width: 1.0, color: Colors.grey),
+            ),
+          ),
           child: Row(
             children: <Widget>[
               Container(
-                margin: EdgeInsets.all(10.0),
+                margin: const EdgeInsets.all(10.0),
                 child: icon,
               ),
               Text(
                 title,
-                style: TextStyle(color: Colors.black, fontSize: 18.0),
+                style: const TextStyle(color: Colors.black, fontSize: 18.0),
               ),
             ],
           )),
@@ -280,8 +286,8 @@ class _EnterPriceState extends State<EnterPrice> {
     audiocache.loadAll(SOUND_DATA);
 
     return Scaffold(
-      appBar: new AppBar(
-        title: new Text("ハピーをつかう"),
+      appBar: AppBar(
+        title: const Text("ハピーをつかう"),
       ), //AppBar
       backgroundColor: Colors.white38,
       body: Column(
@@ -292,18 +298,19 @@ class _EnterPriceState extends State<EnterPrice> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       alignment: Alignment.centerRight,
                       child: Text(
                         userInput,
-                        style: TextStyle(fontSize: 40, color: Colors.black),
+                        style:
+                            const TextStyle(fontSize: 40, color: Colors.black),
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       //alignment: Alignment.centerRight,
                       child: ElevatedButton(
-                        child: Text('つかう',
+                        child: const Text('つかう',
                             style: TextStyle(
                                 fontSize: 30, fontWeight: FontWeight.bold)),
                         onPressed: () => pay(),
@@ -317,7 +324,7 @@ class _EnterPriceState extends State<EnterPrice> {
             child: Container(
               child: GridView.builder(
                   itemCount: buttons.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3, childAspectRatio: 1.5),
                   itemBuilder: (BuildContext context, int index) {
                     // Clear Button
@@ -405,7 +412,7 @@ class _EnterPriceState extends State<EnterPrice> {
   }
 
   Future pay() async {
-    var rand = new math.Random();
+    var rand = math.Random();
     var n = rand.nextInt(SOUND_DATA.length);
     audiocache.play(SOUND_DATA[n]);
 
@@ -472,19 +479,22 @@ class PayedView extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('ハピーをつかう'),
+          title: const Text('ハピーをつかう'),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('ハピーをつかいました',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-              SizedBox(height: 40),
+              const Text(
+                'ハピーをつかいました',
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 40),
               ElevatedButton(
-                child: Text('もどる',
-                    style:
-                        TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+                child: const Text(
+                  'もどる',
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                ),
                 onPressed: () =>
                     Navigator.popUntil(context, (route) => route.isFirst),
               ),
