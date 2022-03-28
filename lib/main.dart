@@ -3,6 +3,19 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'dart:math' as math;
 
+const kSoundData = [
+  'sounds/happy1.m4a',
+  'sounds/happy2.m4a',
+  'sounds/happy3.m4a',
+  'sounds/happy4.m4a',
+  'sounds/happy5.m4a',
+  'sounds/happy6.m4a',
+  'sounds/happy7.m4a',
+  'sounds/happy8.m4a',
+  'sounds/happy9.m4a',
+  'sounds/happya.m4a',
+];
+
 void main() {
   runApp(const MyApp());
 }
@@ -29,19 +42,6 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
-
-const SOUND_DATA = [
-  'sounds/happy1.m4a',
-  'sounds/happy2.m4a',
-  'sounds/happy3.m4a',
-  'sounds/happy4.m4a',
-  'sounds/happy5.m4a',
-  'sounds/happy6.m4a',
-  'sounds/happy7.m4a',
-  'sounds/happy8.m4a',
-  'sounds/happy9.m4a',
-  'sounds/happya.m4a',
-];
 
 class _MyHomePageState extends State {
   String qrCode = '';
@@ -283,7 +283,7 @@ class _EnterPriceState extends State<EnterPrice> {
 
   @override
   Widget build(BuildContext context) {
-    audiocache.loadAll(SOUND_DATA);
+    audiocache.loadAll(kSoundData);
 
     return Scaffold(
       appBar: AppBar(
@@ -413,8 +413,8 @@ class _EnterPriceState extends State<EnterPrice> {
 
   Future pay() async {
     var rand = math.Random();
-    var n = rand.nextInt(SOUND_DATA.length);
-    audiocache.play(SOUND_DATA[n]);
+    var n = rand.nextInt(kSoundData.length);
+    audiocache.play(kSoundData[n]);
 
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const PayedView()));
