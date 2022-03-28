@@ -4,10 +4,12 @@ import 'package:audioplayers/audioplayers.dart';
 import 'dart:math' as math;
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,12 +18,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         //primarySwatch: Color(0xff8833),
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -122,24 +126,24 @@ class _MyHomePageState extends State {
   }
 
   Future enterPrice() async {
-    Navigator.push(context, MaterialPageRoute(
-      builder: (context) => EnterPrice()
-    ));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const EnterPrice()));
   }
 
   Future showEvents() async {
-    Navigator.push(context, MaterialPageRoute(
-      builder: (context) => EventList()
-    ));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const EventList()));
   }
+
   Future showMap() async {
-    Navigator.push(context, MaterialPageRoute(
-      builder: (context) => ShopList()
-    ));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const ShopList()));
   }
 }
 
 class EventList extends StatelessWidget {
+  const EventList({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -190,6 +194,8 @@ class EventList extends StatelessWidget {
 }
 
 class ShopList extends StatelessWidget {
+  const ShopList({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -241,6 +247,8 @@ class ShopList extends StatelessWidget {
 // EnterPrice
 
 class EnterPrice extends StatefulWidget {
+  const EnterPrice({Key? key}) : super(key: key);
+
   @override
   _EnterPriceState createState() => _EnterPriceState();
 }
@@ -415,8 +423,14 @@ class MyButton extends StatelessWidget {
   final buttontapped;
 
   //Constructor
-  MyButton({this.color, this.textColor, required this.buttonText, this.buttontapped});
- 
+  const MyButton({
+    Key? key,
+    this.color,
+    this.textColor,
+    required this.buttonText,
+    this.buttontapped,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -445,6 +459,8 @@ class MyButton extends StatelessWidget {
 }
 
 class PayedView extends StatelessWidget {
+  const PayedView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
