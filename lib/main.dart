@@ -108,6 +108,7 @@ class _MyHomePageState extends State {
   }
 
   Future scanQrCode() async {
+    // ignore: unused_local_variable
     final qrCode = await FlutterBarcodeScanner.scanBarcode(
       '#EB394B',
       'キャンセル',
@@ -191,6 +192,7 @@ class EventList extends StatelessWidget {
             ],
           )),
       onTap: () {
+        // ignore: avoid_print
         print("onTap called.");
       },
     );
@@ -244,6 +246,7 @@ class ShopList extends StatelessWidget {
             ],
           )),
       onTap: () {
+        // ignore: avoid_print
         print("onTap called.");
       },
     );
@@ -365,6 +368,7 @@ class _EnterPriceState extends State<EnterPrice> {
                         buttontapped: () {
                           setState(() {
                             userInput += buttons[index];
+                            // ignore: avoid_print
                             print(userInput);
                           });
                         },
@@ -398,6 +402,7 @@ class _EnterPriceState extends State<EnterPrice> {
 
 // function to calculate the input operation
   void equalPressed() {
+    // ignore: unused_local_variable
     String finaluserinput = userInput;
     /*
     finaluserinput = userInput.replaceAll('x', '*');
