@@ -424,10 +424,10 @@ class _EnterPriceState extends State<EnterPrice> {
 // creating Stateless Widget for buttons
 class MyButton extends StatelessWidget {
   // declaring variables
-  final color;
-  final textColor;
+  final Color? color;
+  final Color? textColor;
   final String buttonText;
-  final buttontapped;
+  final void Function()? buttontapped;
 
   //Constructor
   const MyButton({
