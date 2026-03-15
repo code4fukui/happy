@@ -1,20 +1,28 @@
-# happy - さばえSDGsアプリ「ハピー」（仮称）
-
+# happy
 A Flutter project.
 
+## Demo
 ![image](https://user-images.githubusercontent.com/1715217/160021012-40df6d54-3b0b-405f-bd47-abd1a4dde6d5.png)
 
-- [事前説明会](https://fukuno.jig.jp/3521)
+## Features
+- SDGs (Sustainable Development Goals) points and "Happy" points tracking
+- QR code scanning to add points
+- Lists of SDGs events and collaborating shops
 
-## Getting Started
+## Requirements
+This project requires Flutter SDK version 2.16.1 or higher.
 
-This project is a starting point for a Flutter application.
+## Usage
+To run this project, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+1. Ensure you have Flutter SDK installed on your system.
+2. Clone the repository: `git clone https://github.com/your-username/happy.git`
+3. Navigate to the project directory: `cd happy`
+4. Install dependencies: `flutter pub get`
+5. Run the app: `flutter run`
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Data / API
+This project uses the Flutter Barcode Scanner plugin to scan QR codes.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## License
+This project is licensed under the MIT License.
