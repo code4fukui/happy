@@ -18,7 +18,7 @@ This project requires Flutter SDK version 2.16.1 or higher.
 ## Usage
 To run this project, follow these steps:
 
-1. Ensure you have Flutter SDK installed on your system.
+1. Ensure you have Flutter SDK installed on your system. 
 2. Clone the repository: `git clone https://github.com/your-username/happy.git`
 3. Navigate to the project directory: `cd happy`
 4. Install dependencies: `flutter pub get`
@@ -28,4 +28,4 @@ To run this project, follow these steps:
 This project uses the Flutter Barcode Scanner plugin to scan QR codes.
 
 ## License
-This project is licensed under the MIT License.
+MIT License — see [LICENSE](LICENSE).
